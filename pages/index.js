@@ -16,10 +16,10 @@ export default function Home({  admin }) {
   })
   const getList = async()=>{
     const res = await axios.get(
-      // `${process.env.NEXT_PUBLIC_SERVER}/api/products`
+      `${process.env.NEXT_PUBLIC_SERVER}/api/products`
         //  'http://localhost:3000/api/products'
       // `https://aquilas-store-app.vercel.app/api/products`
-      `https://aquilas-store-app-master.vercel.app/api/products`
+      // `https://aquilas-store-app-master.vercel.app/api/products`
     );
     setAquilasList(res.data)
   }
