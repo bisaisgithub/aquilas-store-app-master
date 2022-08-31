@@ -7,10 +7,10 @@ import AquilasList from '../components/AquilasList';
 import Featured from '../components/Featured';
 import styles from '../styles/Home.module.css';
 
-export default function Home({  admin }) {
+export default function Home({aquilasList, admin }) {
   console.log('admin', admin)
   const [close, setClose] = useState(true);
-  const [aquilasList, setAquilasList] = useState([]);
+  // const [aquilasList, setAquilasList] = useState([]);
   // useEffect(()=>{
   //  getList()
   // })
