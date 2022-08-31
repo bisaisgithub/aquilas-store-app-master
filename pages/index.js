@@ -11,18 +11,18 @@ export default function Home({  admin }) {
   console.log('admin', admin)
   const [close, setClose] = useState(true);
   const [aquilasList, setAquilasList] = useState([]);
-  useEffect(()=>{
-   getList()
-  })
-  const getList = async()=>{
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_SERVER}/api/products`
-        //  'http://localhost:3000/api/products'
-      // `https://aquilas-store-app.vercel.app/api/products`
-      // `https://aquilas-store-app-master.vercel.app/api/products`
-    );
-    setAquilasList(res.data)
-  }
+  // useEffect(()=>{
+  //  getList()
+  // })
+  // const getList = async()=>{
+  //   const res = await axios.get(
+  //     `${process.env.NEXT_PUBLIC_SERVER}/api/products`
+  //       //  'http://localhost:3000/api/products'
+  //     // `https://aquilas-store-app.vercel.app/api/products`
+  //     // `https://aquilas-store-app-master.vercel.app/api/products`
+  //   );
+  //   setAquilasList(res.data)
+  // }
   return (
     <div className={styles.container}>
       <Head>
@@ -46,16 +46,10 @@ export const getServerSideProps = async (ctx) => {
     admin = true;
   }
 
-  // const res = await axios.get(`${process.env.SERVER}/api/products`);
-  // const res = await axios.get(
-  //   `http://localhost:3000/api/products`
-  //      'http://localhost:3000/api/products'
-  //   `https://aquilas-store-app.vercel.app/api/products`
-  // );
+  const res = await axios.get(`${process.env.SERVER}/api/products`);
   return {
     props: {
-      // aquilasList: [],
-      // aquilasList: res.data,
+      aquilasList: res.data,
       admin,
     },
   };
